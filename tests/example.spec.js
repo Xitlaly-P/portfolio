@@ -1,19 +1,23 @@
-// @ts-check
 const { test, expect } = require('@playwright/test');
 
-test('has title', async ({ page }) => {
-  await page.goto('https://playwright.dev/');
+test('check that "express works" text is present', async ({ page }) => {
+  await page.goto('/');
+  
+  // Using the expect method with a page locator
+  // This will check if the text "express works" is present anywhere on the page
+  // Using a locator to get the text content of the h1 element
+  const heading = page.locator('h1');
+  await expect(heading).toHaveText('express works');
 
-  // Expect a title "to contain" a substring.
-  await expect(page).toHaveTitle(/Playwright/);
 });
 
-test('get started link', async ({ page }) => {
-  await page.goto('https://playwright.dev/');
+test('check that UTF-8 meta tag is present', async ({ page }) => {
+  //Arrange: Go to the site homepage
+  await page.goto('/');
 
-  // Click the get started link.
-  await page.getByRole('link', { name: 'Get started' }).click();
+  //Act: Get the content attribute of the meta charset tag
+  const metaCharset = await page.$eval('meta[charset]', (meta) => meta.getAttribute('charset'));
 
-  // Expects page to have a heading with the name of Installation.
-  await expect(page.getByRole('heading', { name: 'Installation' })).toBeVisible();
+  //Assert: Check if the charset is set to UTF-8
+  await expect(metaCharset).toBe('utf-8');
 });
