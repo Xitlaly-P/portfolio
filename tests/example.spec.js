@@ -1,14 +1,13 @@
 const { test, expect } = require('@playwright/test');
 
-test('check that "express works" text is present', async ({ page }) => {
-  await page.goto('/');
-  
-  // Using the expect method with a page locator
-  // This will check if the text "express works" is present anywhere on the page
-  // Using a locator to get the text content of the h1 element
-  const heading = page.locator('h1');
-  await expect(heading).toHaveText('express works');
+test('check that the title is "Xitlaly Prado"', async ({ page }) => {
+  await page.goto('/'); // Use the full URL
 
+  // Get the title of the page
+  const title = await page.title();
+
+  // Check if the title is "Xitlaly Prado"
+  await expect(title).toBe('Xitlaly Prado');
 });
 
 test('check that UTF-8 meta tag is present', async ({ page }) => {
