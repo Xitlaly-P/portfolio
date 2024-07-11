@@ -1,0 +1,23 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "Class project using node, playwright, and git",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx playwright test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Xitlaly-P/portfolio.git"
+  },
+  "keywords": [
+    "student",
+    "project"
+  ],
+  "author": "Xitlaly Prado",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Xitlaly-P/portfolio/issues"
+  },
+  "homepage": "https://github.com/Xitlaly-P/portfolio#readme"
+}
