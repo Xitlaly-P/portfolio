@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+:root {
+    /* Colors */
+    --color-primary: #EBE6DC;
+    --color-secondary: #BCC6BC;
+    --color-accent: #E1C6B9; 
+    --color-font: #35342F;
+}
+body{
+    background-color: var(--color-primary);
+    font: var(--color-font);
+}
+h1{
+    font-family: 'Inter', sans-serif;
+}
