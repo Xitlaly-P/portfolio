@@ -13,3 +13,14 @@ body{
 h1{
     font-family: 'Inter', sans-serif;
 }
+.greenback{
+    background-color: var(--color-secondary);
+    position:fixed;
+    padding:0;
+    margin:0;
+    width: 66vw;
+    height:100vh;
+    left:0px;
+    top:0px;
+    z-index: -1;
+}
