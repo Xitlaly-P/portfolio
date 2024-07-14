@@ -4,8 +4,9 @@
     /* Colors */
     --color-primary: #EBE6DC;
     --color-secondary: #BCC6BC;
-    --color-accent: #E1C6B9; 
+    --color-accent: #E1C6B9;
     --color-font: #35342F;
+
 
     --font-main: 'Inter', sans-serif;
     --font-sec: 'Roboto', sans-serif;
@@ -28,15 +29,16 @@ html{
 }
 .greenback{
     background-color: var(--color-secondary);
-    position:fixed;
+    position:absolute;
     padding:0;
     margin:0;
     width: 66vw;
-    height:100vh;
+    height:130vh;
     left:0px;
     top:0px;
     z-index: -1;
 }
+
 
 .menu{
     display: flex;
@@ -46,6 +48,7 @@ html{
     margin-top: auto;
     margin-bottom: auto;
 }
+
 
 .menu-items{
     text-align: right;
@@ -59,10 +62,12 @@ html{
     font-size:30px;
 }
 
+
 a{
     color: var(--color-font);
     text-decoration: none;
 }
+
 
 header{
     vertical-align: middle;
@@ -77,9 +82,10 @@ header{
     padding-top: 2vh;
 }
 .github{
-    height: 60px; 
+    height: 60px;
     vertical-align: baseline;
 }
+
 
 .hero{
     margin-top:5rem;
@@ -91,12 +97,14 @@ header{
     font: 2rem / 1.6 var(--font-main);
 }
 
+
 .hero h1{
     font-size: 36px;
     font-family: var(--font-main);
     font-weight:normal;
     margin-bottom:1.5vh;
 }
+
 
 .hero-text{
     width:50%;
@@ -106,8 +114,10 @@ header{
     padding-bottom:7vh;
 }
 
+
 .hero-image{
     align-self: flex-end;
+    height: 544px;
 }
 h5{
     font-style: italic;
@@ -117,6 +127,7 @@ h5{
     margin-top:0px;
     margin-bottoM:1.5vh;
 }
+
 
 a.button-link{
     display: inline-block;
@@ -131,8 +142,8 @@ a.button-link{
     font-size: 20px;
 }
 
+
 .affiliations{
-    margin-top: 10rem;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -151,6 +162,7 @@ a.button-link{
     color: var(--color-font);
 }
 
+
 .affil {
     display: flex;
     justify-content: center;
@@ -158,6 +170,7 @@ a.button-link{
     margin-top:5rem;
     margin-bottom:5rem;
 }
+
 
 .card {
     background-color: var(--color-secondary);
@@ -173,6 +186,7 @@ a.button-link{
     align-items: center;
 }
 
+
 .card-image {
     position: absolute;
     top: -50px;
@@ -180,12 +194,14 @@ a.button-link{
     height: 100px;
 }
 
+
 .card img {
     border-radius: 50%;
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
+
 
 .card h3 {
     font-family: var(--font-main);
@@ -195,6 +211,7 @@ a.button-link{
     font-weight:normal;
     color: var(--color-font)
 }
+
 
 .card p {
     font-family: var(--font-main);
@@ -207,6 +224,59 @@ a.button-link{
     font-weight:normal;
 }
 
+
 .pink-border{
     background-color: var(--color-accent);
 }
+
+
+.about{
+    margin-left: 5vw;
+    margin-right: 5vw;
+}
+
+
+.about-card{
+    border-color: var(--color-secondary);
+    border-radius: 24px;
+    border-width: 10px;
+    border-style: solid;
+    display: flex;
+    margin-bottom: 5vh;
+}
+#pink{
+    border-color: var(--color-accent);
+    border-radius: 24px;
+    border-width: 10px;
+    border-style: solid;
+}
+
+
+.about-image{
+    margin: 1.5vw;
+}
+
+
+h7{
+    font-family: var(--font-main);
+    font-size: 30px;
+    font-weight: bold;
+}
+
+
+.about-text p{
+    font-family: var(--font-main);
+    font-size: 22px;
+}
+.about-text{
+    margin-top: auto;
+    margin-bottom:auto;
+}
+
+
+#extra{
+    margin-left:1.5vw;
+}
+
+
+
