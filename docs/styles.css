@@ -28,11 +28,11 @@ html{
 }
 .greenback{
     background-color: var(--color-secondary);
-    position:fixed;
+    position:absolute;
     padding:0;
     margin:0;
     width: 66vw;
-    height:100vh;
+    height:130vh;
     left:0px;
     top:0px;
     z-index: -1;
@@ -108,6 +108,7 @@ header{
 
 .hero-image{
     align-self: flex-end;
+    height: 544px;
 }
 h5{
     font-style: italic;
@@ -132,7 +133,6 @@ a.button-link{
 }
 
 .affiliations{
-    margin-top: 10rem;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -209,4 +209,47 @@ a.button-link{
 
 .pink-border{
     background-color: var(--color-accent);
+}
+
+.about{
+    margin-left: 5vw;
+    margin-right: 5vw;
+}
+
+.about-card{
+    border-color: var(--color-secondary);
+    border-radius: 24px;
+    border-width: 10px;
+    border-style: solid;
+    display: flex;
+    margin-bottom: 5vh;
+}
+#pink{
+    border-color: var(--color-accent);
+    border-radius: 24px;
+    border-width: 10px;
+    border-style: solid;
+}
+
+.about-image{
+    margin: 1.5vw;
+}
+
+h7{
+    font-family: var(--font-main);
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.about-text p{
+    font-family: var(--font-main);
+    font-size: 22px;
+}
+.about-text{
+    margin-top: auto;
+    margin-bottom:auto;
+}
+
+#extra{
+    margin-left:1.5vw;
 }
