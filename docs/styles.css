@@ -74,3 +74,53 @@ header{
     height: 60px; 
     vertical-align: baseline;
 }
+
+.hero{
+    margin-top:5rem;
+    margin-bottom:5rem;
+    margin-left:13vw;
+    margin-right:13vw;
+    display:flex;
+    justify-content: space-between;
+    font: 2rem / 1.6 var(--font-main);
+}
+
+.hero h1{
+    font-size: 36px;
+    font-family: var(--font-main);
+    font-weight:normal;
+    margin-bottom:1.5vh;
+}
+
+.hero-text{
+    width:50%;
+    font-weight: normal;
+    margin-top: auto;
+    margin-bottom:auto;
+    padding-bottom:7vh;
+}
+
+.hero-image{
+    align-self: flex-end;
+}
+h5{
+    font-style: italic;
+    font-weight: normal;
+    font-size: 20px;
+    width:80%;
+    margin-top:0px;
+    margin-bottoM:1.5vh;
+}
+
+a.button-link{
+    display: inline-block;
+    font-size:1rem;
+    text-align: center;
+    padding: 10px 20px;
+    border-radius: 20px;
+    background-color: var(--color-accent);
+    text-decoration: none;
+    align-content: center;
+    font-weight: 500;
+    font-size: 20px;
+}
