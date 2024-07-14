@@ -20,3 +20,17 @@ test('check that UTF-8 meta tag is present', async ({ page }) => {
   //Assert: Check if the charset is set to UTF-8
   await expect(metaCharset).toBe('utf-8');
 });
+
+test('check that affiliations page exists', async ({ page }) => {
+  // Go to the site homepage
+  await page.goto('/');
+
+  // Click on the Affiliations link in the menu
+  await page.click('text=Affiliations');
+
+  // Wait for the affiliations section to be visible
+  const affiliationsSection = page.locator('.affiliations');
+  
+  // Assert: Check if the affiliations section is visible
+  await expect(affiliationsSection).toBeVisible();
+});

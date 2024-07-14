@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 :root {
     /* Colors */
     --color-primary: #EBE6DC;
@@ -7,13 +8,18 @@
     --color-font: #35342F;
 
     --font-main: 'Inter', sans-serif;
+    --font-sec: 'Roboto', sans-serif;
 }
 body{
     background-color: var(--color-primary);
     font: var(--color-font);
+    height:100%;
+    padding: 0px;
+    margin: 0px;
+    border: 0px;
 }
 h1{
-    font-family: 'Inter', sans-serif;
+    font-family: var(--font-sec);
 }
 html{
     padding: 0px;
@@ -123,4 +129,84 @@ a.button-link{
     align-content: center;
     font-weight: 500;
     font-size: 20px;
+}
+
+.affiliations{
+    margin-top: 10rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 5vw;
+    margin-right:5vw;
+}
+.heading{
+    width: 70%;
+    text-align: center;
+    align-self: center;
+    margin:auto;
+    font-family: var(--font-main);
+    font-weight: bold;
+    font-size:35px;
+    color: var(--color-font);
+}
+
+.affil {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top:5rem;
+    margin-bottom:5rem;
+}
+
+.card {
+    background-color: var(--color-secondary);
+    padding-left:1rem;
+    padding-right:1rem;
+    padding-bottom:1.5rem;
+    border-radius: 10px;
+    text-align: center;
+    width: 30%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card-image {
+    position: absolute;
+    top: -50px;
+    width: 100px;
+    height: 100px;
+}
+
+.card img {
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card h3 {
+    font-family: var(--font-main);
+    margin-top: 60px;
+    font-size: 30px;
+    margin-bottom: 10px;
+    font-weight:normal;
+    color: var(--color-font)
+}
+
+.card p {
+    font-family: var(--font-main);
+    padding-left: 1rem;
+    padding-right:1rem;
+    font-size: 22px;
+    margin-top: auto;
+    margin-bottom: auto;
+    font-style: italic;
+    font-weight:normal;
+}
+
+.pink-border{
+    background-color: var(--color-accent);
 }
