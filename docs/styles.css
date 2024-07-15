@@ -366,3 +366,26 @@ h7{
 .knowledge a{
     font-size: 22px;
 }
+
+.other-section{
+    margin-left: 5vw;
+    margin-right: 5vw;
+    margin-bottom: 2vh;
+}
+
+.other-sec{
+    display: flex;
+    align-items: center;
+    gap: 3vw;
+}
+.other-card{
+    background-color: var(--color-secondary);
+    padding: 2vw;
+    border-radius: 24px;
+}
+.other-card p{
+    font-family: var(--font-main);
+    font-size: 22px;
+    text-align: center;
+    margin-bottom: 0px;
+}
