@@ -370,18 +370,20 @@ h7{
 .other-section{
     margin-left: 5vw;
     margin-right: 5vw;
-    margin-bottom: 2vh;
+    margin-bottom: 8vh;
 }
 
 .other-sec{
     display: flex;
     align-items: center;
     gap: 3vw;
+    justify-content: center;
 }
 .other-card{
     background-color: var(--color-secondary);
     padding: 2vw;
     border-radius: 24px;
+    width: 299px;
 }
 .other-card p{
     font-family: var(--font-main);
