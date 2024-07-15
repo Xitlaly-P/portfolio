@@ -389,3 +389,28 @@ h7{
     text-align: center;
     margin-bottom: 0px;
 }
+
+.footer{
+    background-color: var(--color-accent);
+    margin-bottom: 0px;
+    align-items: center;
+    padding-bottom: 2vh;
+    padding-top: 2vh;
+    align-content: center;
+    text-align: center;
+}
+.links{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5vw;
+}
+.links img{
+    height:30px;
+}
+.footer p{
+    font-family: var(--font-main);
+    color: var(--color-font);
+    font-size: 20px;
+    font-weight: bold;
+}
