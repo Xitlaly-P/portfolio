@@ -278,5 +278,91 @@ h7{
     margin-left:1.5vw;
 }
 
+.projects-section{
+    background-color: var(--color-secondary);
+    padding-top:1vh;
+}
+.margin{
+    margin-left:5vw;
+    margin-right:5vw;
+    padding-bottom: 2vh;
+}
 
 
+.projects {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 10vh;
+}
+
+.projects2 {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    margin-top: 20px;
+    margin-bottom: 10vh;
+}
+
+
+.project-background {
+    height: 465px;
+    border-radius: 24px;
+    width: 768px;
+}
+
+.project-backgroundtwo {
+    width: 768px;
+    height: 465px;
+    border-radius: 24px;
+    position: relative;
+}
+
+.project-card {
+    width: 728px;
+    position: absolute;
+    right:0px;
+    background-color: var(--color-primary);
+    border-radius: 24px;
+    padding: 20px;
+    z-index: 1;
+}
+
+.project-card2 {
+    left:0px;
+    background-color: var(--color-primary);
+    border-radius: 24px;
+    padding: 20px;
+    width:728px;
+    position: absolute;
+    z-index: 1;
+}
+
+.project-text {
+    font-family: var(--font-main);
+    color: var(--color-font);
+    padding: 1.5vh 2.8vw;
+}
+
+.project-text h4 {
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+
+.project-text p {
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+.knowledge {
+    display: flex;
+    gap: 18px;
+}
+
+.knowledge a{
+    font-size: 22px;
+}
