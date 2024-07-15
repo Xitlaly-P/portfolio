@@ -34,3 +34,17 @@ test('check that affiliations page exists', async ({ page }) => {
   // Assert: Check if the affiliations section is visible
   await expect(affiliationsSection).toBeVisible();
 });
+
+test('check that projects section exists', async ({ page }) => {
+  // Go to the site homepage
+  await page.goto('/');
+
+  // Click on the Projects link in the menu
+  await page.click('text=Projects');
+
+  // Wait for the projects section to be visible
+  const projectsSection = page.locator('#projects');
+  
+  // Assert: Check if the projects section is visible
+  await expect(projectsSection).toBeVisible();
+});
