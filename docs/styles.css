@@ -438,6 +438,7 @@ h7{
         margin-top:5rem;
         margin-left:auto;
         margin-right:auto;
+        margin-bottom:0px;
         display: flex;
         justify-content: center;
         justify-self: center;
@@ -496,5 +497,59 @@ h7{
         flex-direction: column;
         text-align: center;
         padding-top: .3rem;
+    }
+
+    .project-card {
+        width: 80%;
+        position: relative;
+        right:0px;
+        background-color: var(--color-primary);
+        border-radius: 24px;
+        padding: 20px;
+        z-index: 1;
+    }
+    
+    .project-card2 {
+        left:0px;
+        background-color: var(--color-primary);
+        border-radius: 24px;
+        padding: 20px;
+        width:80%;
+        position: relative;
+        z-index: 1;
+    }
+    .project-background {
+        height: auto;
+        border-radius: 24px;
+        width: 80%;
+    }
+    
+    .project-backgroundtwo {
+        width: 80%;
+        height: auto;
+        border-radius: 24px;
+        position: relative;
+    }
+    .projects {
+        position: relative;
+        display: flex;
+        align-items: center;
+        margin-top: 2vh;
+        margin-bottom: 12vh;
+        flex-direction: column;
+    }
+    .projects2 {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: end;
+        margin-top: 20px;
+        margin-bottom: 10vh;
+        flex-direction: column;
+    }
+    .knowledge {
+        display: flex;
+        gap: 18px;
+        flex-direction: column;
     }
 }
