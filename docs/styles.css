@@ -552,4 +552,22 @@ h7{
         gap: 18px;
         flex-direction: column;
     }
+    .other-sec{
+        display: flex;
+        align-items: center;
+        gap: 3vw;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+    }
+    .other-card{
+        background-color: var(--color-secondary);
+        padding: 3.3vw;
+        border-radius: 24px;
+        width: 299px;
+        border-width: 6vw;
+    }
+    .other-card img{
+        width: 95%;
+    }
 }
