@@ -3,7 +3,7 @@ const { test, expect } = require('@playwright/test');
 test('check that the title is "Xitlaly Prado"', async ({ page }) => {
   await page.goto('/'); // Use the full URL
 
-  // Get the title of the page
+  // Get the title of the pag
   const title = await page.title();
 
   // Check if the title is "Xitlaly Prado"
