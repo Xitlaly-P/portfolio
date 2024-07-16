@@ -125,7 +125,7 @@ h5{
     font-size: 20px;
     width:80%;
     margin-top:0px;
-    margin-bottoM:1.5vh;
+    margin-bottom:1.5vh;
 }
 
 
@@ -415,4 +415,39 @@ h7{
     color: var(--color-font);
     font-size: 20px;
     font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .greenback{
+        position:absolute;
+        padding:0;
+        margin:0;
+        width: 100vw;
+        height: 100vh;
+        left:0px;
+        top:0px;
+        z-index: -1;
+    }
+    .navlink{
+        display: none;
+    }
+    .hero-image{
+        display:none;
+    }
+    .hero{
+        margin-top:5rem;
+        margin-bottom:5rem;
+        margin-left:auto;
+        margin-right:auto;
+        display: flex;
+        justify-content: center;
+        justify-self: center;
+        text-align: center;
+        align-content: center;
+        font: 2rem / 1.6 var(--font-main);
+    }
+    h5{
+        margin-left:auto;
+        margin-right:auto;
+    }
 }
