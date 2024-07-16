@@ -570,4 +570,10 @@ h7{
     .other-card img{
         width: 95%;
     }
+    .footer p{
+        font-family: var(--font-main);
+        color: var(--color-font);
+        font-size: 13px;
+        font-weight: bold;
+    }
 }
