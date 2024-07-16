@@ -33,7 +33,7 @@ html{
     padding:0;
     margin:0;
     width: 66vw;
-    height:130vh;
+    height:105vh;
     left:0px;
     top:0px;
     z-index: -1;
@@ -376,7 +376,7 @@ h7{
 .other-sec{
     display: flex;
     align-items: center;
-    gap: 3vw;
+    gap: 2vw;
     justify-content: center;
 }
 .other-card{
@@ -575,5 +575,13 @@ h7{
         color: var(--color-font);
         font-size: 13px;
         font-weight: bold;
+    }
+}
+@media (min-width: 769px) and (max-width: 1090px){
+    .other-card img{
+        width: 97%;
+        align-self: center;
+        margin-left: auto;
+        margin-right: auto;
     }
 }
