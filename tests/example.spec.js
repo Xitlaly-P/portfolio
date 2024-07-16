@@ -27,21 +27,6 @@ test('Check presence of "Hero" section', async ({ page }) => {
   await expect(heroText).toHaveText('Xitlaly Prado');
 });
 
-test('Check presence and content of "Affiliations" section', async ({ page }) => {
-  await page.goto('/'); // Use the full URL
-
-  const affiliationsSection = await page.locator('#affiliations');
-  await expect(affiliationsSection).toBeVisible();
-
-  const affiliationAvanade = await page.locator('h3:has-text("Avanade")');
-  const affiliationWics = await page.locator('h3:has-text("Women in Computing Society")');
-  const affiliationCodePath = await page.locator('h3:has-text("Code Path")');
-
-  await expect(affiliationAvanade).toBeVisible();
-  await expect(affiliationWics).toBeVisible();
-  await expect(affiliationCodePath).toBeVisible();
-});
-
 test('Check presence and content of "About" section', async ({ page }) => {
   await page.goto('/'); // Use the full URL
 
@@ -101,4 +86,99 @@ test('Check presence of "Copyright" text in the footer', async ({ page }) => {
   const copyrightText = await page.locator('.footer p');
   await expect(copyrightText).toBeVisible();
   await expect(copyrightText).toHaveText('Copyright @ 2024 all rights reserved to Xitlaly Prado');
+});
+
+test('Check that GitHub link in the footer works', async ({ page, context }) => {
+  // Navigate to the page
+  await page.goto('/'); // Use the full URL if necessary
+
+  // Locate the GitHub link in the footer
+  const githubLink = page.locator('.footer .links a[href="https://github.com/Xitlaly-P"]');
+  
+  // Ensure the GitHub link is visible
+  await expect(githubLink).toBeVisible();
+
+  // Click the GitHub link
+  await githubLink.click();
+
+  // Get all pages in the context
+  const pages = context.pages();
+  
+  // The last opened page should be the new page
+  const newPage = pages[pages.length - 1];
+
+  // Wait for the new page to load
+  await newPage.waitForLoadState('domcontentloaded');
+
+  // Check that the new page URL contains "github.com"
+  await expect(newPage.url()).toContain('github.com/Xitlaly-P');
+});
+
+test('Check that LinkedIn link in the footer works', async ({ page, context }) => {
+  // Navigate to the page
+  await page.goto('/'); // Use the full URL if necessary
+
+  // Locate the GitHub link in the footer
+  const linkedInLink = page.locator('.footer .links a[href="https://www.linkedin.com/in/xitlalyprado/"]');
+  
+  // Ensure the GitHub link is visible
+  await expect(linkedInLink).toBeVisible();
+
+  // Click the GitHub link
+  await linkedInLink.click();
+
+  // Get all pages in the context
+  const pages = context.pages();
+  
+  // The last opened page should be the new page
+  const newPage = pages[pages.length - 1];
+
+  // Wait for the new page to load
+  await newPage.waitForLoadState('domcontentloaded');
+
+  // Check that the new page URL contains "github.com"
+  await expect(newPage.url()).toContain('https://www.linkedin.com/in/xitlalyprado/');
+});
+
+test('Check that LinkedIn link in the hero works', async ({ page, context }) => {
+  // Navigate to the page
+  await page.goto('/'); // Use the full URL if necessary
+
+  // Locate the GitHub link in the footer
+  const linkedInLink = page.locator('.hero .hero-text a[href="https://www.linkedin.com/in/xitlalyprado/"]');
+  
+  // Ensure the GitHub link is visible
+  await expect(linkedInLink).toBeVisible();
+
+  // Click the GitHub link
+  await linkedInLink.click();
+
+  // Get all pages in the context
+  const pages = context.pages();
+  
+  // The last opened page should be the new page
+  const newPage = pages[pages.length - 1];
+
+  // Wait for the new page to load
+  await newPage.waitForLoadState('domcontentloaded');
+
+  // Check that the new page URL contains "github.com"
+  await expect(newPage.url()).toContain('https://www.linkedin.com/in/xitlalyprado/');
+});
+
+test('Check affiliation cards', async ({ page }) => {
+  await page.goto('/');
+  
+  const affiliations = [
+    { alt: 'avanade logo', heading: 'Avanade', text: 'Through a mentorship program I learn about the industry and network with people in the company' },
+    { alt: 'wics logo', heading: 'Women in Computing Society', text: 'As the event coordinator I organize events for over 300 members of women interested in computer science' },
+    { alt: 'code path logo', heading: 'Code Path', text: 'Through this program I take classes to help develop my skills to succeed in technical interviews.' },
+  ];
+  
+  for (const [index, affil] of affiliations.entries()) {
+    const card = page.locator('.affil .card').nth(index);
+    await expect(card.locator('.card-image img')).toHaveAttribute('alt', affil.alt);
+    await expect(card.locator('h3')).toHaveText(affil.heading);
+    await expect(card.locator('p')).toHaveText(affil.text);
+  }
 });
