@@ -27,46 +27,69 @@ test('Check presence of "Hero" section', async ({ page }) => {
   await expect(heroText).toHaveText('Xitlaly Prado');
 });
 
-test('Check presence and content of "About" section', async ({ page }) => {
-  await page.goto('/'); // Use the full URL
-
+test('Check presence of "About" section', async ({ page }) => {
+  await page.goto('/');
   const aboutSection = await page.locator('.about');
   await expect(aboutSection).toBeVisible();
+});
 
-  const aboutAcademics = await page.locator('h7:has-text("Academics")');
+test('Check presence of "About WICS"', async ({ page }) => {
+  await page.goto('/');
   const aboutWics = await page.locator('h7:has-text("Women in Computing Society")');
-  const aboutFreeTime = await page.locator('h7:has-text("Free Time")');
-
-  await expect(aboutAcademics).toBeVisible();
   await expect(aboutWics).toBeVisible();
+});
+
+test('Check presence of "About Academics"', async ({ page }) => {
+  await page.goto('/');
+  const aboutAcademics = await page.locator('h7:has-text("Academics")');
+  await expect(aboutAcademics).toBeVisible();
+});
+
+test('Check presence of "About Free Time"', async ({ page }) => {
+  await page.goto('/');
+  const aboutFreeTime = await page.locator('h7:has-text("Free Time")');
   await expect(aboutFreeTime).toBeVisible();
 });
 
-test('Check presence and content of "Projects" section', async ({ page }) => {
-  await page.goto('/'); // Use the full URL
-
+test('Check presence of "Projects" section', async ({ page }) => {
+  await page.goto('/');
   const projectsSection = await page.locator('#projects');
   await expect(projectsSection).toBeVisible();
+});
 
+test('Check project "Cosmic Clips"', async ({ page }) => {
+  await page.goto('/');
   const projectCosmicClips = await page.locator('h4:has-text("Cosmic Clips")');
-  const projectFateOfTheInops = await page.locator('h4:has-text("Fate of the Inops")');
-
   await expect(projectCosmicClips).toBeVisible();
+});
+
+test('Check project "Fate of the Inops"', async ({ page }) => {
+  await page.goto('/');
+  const projectFateOfTheInops = await page.locator('h4:has-text("Fate of the Inops")');
   await expect(projectFateOfTheInops).toBeVisible();
 });
 
-test('Check presence and content of "Other" section', async ({ page }) => {
-  await page.goto('/'); // Use the full URL
-
+test('Check presence of "Other" section', async ({ page }) => {
+  await page.goto('/');
   const otherSection = await page.locator('.other-section');
   await expect(otherSection).toBeVisible();
+});
 
+test('Check "Bloomberg Leadership Workshop" in Other section', async ({ page }) => {
+  await page.goto('/');
   const otherBloomberg = await page.locator('p:has-text("Bloomberg Leadership Workship")');
-  const otherGoogle = await page.locator('p:has-text("Google Tour with Rewriting the Code")');
-  const otherBiliteracy = await page.locator('p:has-text("Earned the Seal of Biliteracy in Spanish")');
-
   await expect(otherBloomberg).toBeVisible();
+});
+
+test('Check "Google Tour with Rewriting the Code" in Other section', async ({ page }) => {
+  await page.goto('/');
+  const otherGoogle = await page.locator('p:has-text("Google Tour with Rewriting the Code")');
   await expect(otherGoogle).toBeVisible();
+});
+
+test('Check "Seal of Biliteracy in Spanish" in Other section', async ({ page }) => {
+  await page.goto('/');
+  const otherBiliteracy = await page.locator('p:has-text("Earned the Seal of Biliteracy in Spanish")');
   await expect(otherBiliteracy).toBeVisible();
 });
 
@@ -166,19 +189,63 @@ test('Check that LinkedIn link in the hero works', async ({ page, context }) => 
   await expect(newPage.url()).toContain('https://www.linkedin.com/in/xitlalyprado/');
 });
 
-test('Check affiliation cards', async ({ page }) => {
+test('Check Avanade affiliation card', async ({ page }) => {
   await page.goto('/');
-  
-  const affiliations = [
-    { alt: 'avanade logo', heading: 'Avanade', text: 'Through a mentorship program I learn about the industry and network with people in the company' },
-    { alt: 'wics logo', heading: 'Women in Computing Society', text: 'As the event coordinator I organize events for over 300 members of women interested in computer science' },
-    { alt: 'code path logo', heading: 'Code Path', text: 'Through this program I take classes to help develop my skills to succeed in technical interviews.' },
+  const card = page.locator('.affil .card').nth(0);
+  await expect(card.locator('.card-image img')).toHaveAttribute('alt', 'avanade logo');
+  await expect(card.locator('h3')).toHaveText('Avanade');
+  await expect(card.locator('p')).toHaveText('Through a mentorship program I learn about the industry and network with people in the company');
+});
+
+test('Check Women in Computing Society affiliation card', async ({ page }) => {
+  await page.goto('/');
+  const card = page.locator('.affil .card').nth(1);
+  await expect(card.locator('.card-image img')).toHaveAttribute('alt', 'wics logo');
+  await expect(card.locator('h3')).toHaveText('Women in Computing Society');
+  await expect(card.locator('p')).toHaveText('As the event coordinator I organize events for over 300 members of women interested in computer science');
+});
+
+test('Check Code Path affiliation card', async ({ page }) => {
+  await page.goto('/');
+  const card = page.locator('.affil .card').nth(2);
+  await expect(card.locator('.card-image img')).toHaveAttribute('alt', 'code path logo');
+  await expect(card.locator('h3')).toHaveText('Code Path');
+  await expect(card.locator('p')).toHaveText('Through this program I take classes to help develop my skills to succeed in technical interviews.');
+});
+
+test('Check images in "About" section', async ({ page }) => {
+  await page.goto('/');
+  const aboutImages = [
+    { alt: 'me and other avanade scholarship winners' },
+    { alt: 'a wics event' },
+    { alt: 'crochet bag that I made' },
   ];
-  
-  for (const [index, affil] of affiliations.entries()) {
-    const card = page.locator('.affil .card').nth(index);
-    await expect(card.locator('.card-image img')).toHaveAttribute('alt', affil.alt);
-    await expect(card.locator('h3')).toHaveText(affil.heading);
-    await expect(card.locator('p')).toHaveText(affil.text);
+  for (const [index, img] of aboutImages.entries()) {
+    const image = page.locator('.about .about-image').nth(index);
+    await expect(image).toHaveAttribute('alt', img.alt);
   }
+});
+
+test('Check image alt text in Projects section', async ({ page }) => {
+  await page.goto('/');
+
+  const projectImages = [
+    { selector: '.project-background', alt: 'cosmic clips logo' },
+    { selector: '.project-backgroundtwo', alt: 'fate of the inops logo' },
+  ];
+
+  for (const img of projectImages) {
+    const image = page.locator(img.selector);
+    await expect(image).toHaveAttribute('alt', img.alt);
+  }
+});
+
+test('Check image alt text in Hero section', async ({ page }) => {
+  await page.goto('/');
+
+  // Locate the hero image
+  const heroImage = page.locator('.hero .hero-image');
+
+  // Check the alt attribute of the hero image
+  await expect(heroImage).toHaveAttribute('alt', 'Xitlaly Prado');
 });
